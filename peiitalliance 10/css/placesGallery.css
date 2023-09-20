@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    min-height: 600px;
+    margin: 0 auto;
+    padding: 30px 6px;
+    padding-top: 50px;
+    /* background-image: url('../images/FoodHall.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.innerMain {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.findPlaces {
+    text-align: center;
+    background-color: white;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px;
+}
+
+.imageCard {
+    width: 200px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    -webkit-box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    -moz-box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    overflow: hidden;
+}
+
+
+
+.imageCard>.image {
+    width: 100%;
+    height: 80%;
+
+}
+
+.imageCard>.image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.ratingStars {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.324);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 100;
+    padding: 5px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.ratingStars>.stars>img {
+    width: 20px;
+    height: 20px;
+}
+
+.ratingStars>.stars {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.imageCard .image:hover>.ratingStars {
+    opacity: 1;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.imageCard h4 {
+    padding: 0 5px;
+}
+
+.map {
+    width: 100%;
+}
+
+.map>h4 {
+    text-align: center;
+    background-color: white;
+    padding: 2px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mapCard {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 5px;
+    /* background-image: url('../images/ConfederationCourtMall.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mapCard iframe {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.placesAndImages {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px
+}
+
+.places {
+    /* max-width: 1150px; */
+    width: 100%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.placesCards>.image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* transition: transform 0.6s ease; */
+}
+
+.placesCards>.image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform: scale(1.05);
+
+
+    object-fit: cover;
+}
+
+.placesCards>.image:hover img {
+    transform: scale(1);
+}
+
+.placesCards .content {
+    margin-top: 15px;
+    padding: 8px;
+}
+
+.requestAccess {
+    background-color: rgb(50, 50, 245);
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: transparent;
+    color: white;
+    box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+}
+
+.mapView {
+    max-width: 1000px;
+    height: 450px;
+    margin: 40px auto;
+}
+
+.mapContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 15px;
+    /* background-image: url('../images/ConfederationCourtMall.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.mapLocation {
+    margin-top: 20px;
+}

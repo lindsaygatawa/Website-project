@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Carousel Example</title>
+    <style>
+        .carousel {
+            width: 400px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-img {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .prevButton,
+        .nextButton {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prevButton {
+            left: 10px;
+        }
+
+        .nextButton {
+            right: 10px;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #eee;
+        }
+
+        .progress-indicator {
+            height: 100%;
+            background-color: #4287f5;
+            width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar">
+        <div class="progress-indicator"></div>
+    </div>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img class="carousel-img" src="./images/WorldCoffee.jpg" alt="">
+            <img class="carousel-img" src="./images/Bistro.jpg" alt="">
+            <img class="carousel-img" src="./images/CharlottetownLibraryLearningCentre.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="prevButton">Previous</div>
+    <div class="nextButton">Next</div>
+
+    <script>
+        const carousel = document.querySelector(".carousel");
+        const carouselInner = carousel.querySelector(".carousel-inner");
+        const prevButton = document.querySelector(".prevButton");
+        const nextButton = document.querySelector(".nextButton");
+
+        let currentImageIndex = 0;
+        const images = carouselInner.getElementsByClassName("carousel-img");
+        const numImages = images.length;
+
+        // Function to show the current image
+        function showCurrentImage() {
+            carouselInner.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+        }
+
+        // Event listener for the previous button
+        prevButton.addEventListener("click", function () {
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = numImages - 1;
+            }
+            showCurrentImage();
+        });
+
+        // Event listener for the next button
+        nextButton.addEventListener("click", function () {
+            currentImageIndex++;
+            if (currentImageIndex >= numImages) {
+                currentImageIndex = 0;
+            }
+            showCurrentImage();
+        });
+
+        // Show the initial image
+        showCurrentImage();
+
+        // Get the progress bar and progress indicator elements
+        const progressBar = document.querySelector('.progress-bar');
+        const progressIndicator = document.querySelector('.progress-indicator');
+
+        // Add click event listener to the progress bar
+        progressBar.addEventListener('click', function (event) {
+            // Calculate the clicked position relative to the progress bar's width
+            const clickedX = event.clientX - progressBar.offsetLeft;
+            const progressBarWidth = progressBar.offsetWidth;
+            const progress = clickedX / progressBarWidth;
+
+            // Update the progress indicator width
+            progressIndicator.style.width = (progress * 100) + '%';
+        });
+    </script>
+</body>
+
+</html>

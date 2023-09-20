@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.image {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    -webkit-box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    -moz-box-shadow: 1px -1px 7px 6px rgba(162, 126, 126, 0.75);
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.prevButton,
+.nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background-color: #ccc; */
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prevButton {
+    left: 10px;
+}
+
+.nextButton {
+    right: 10px;
+}
+
+.imageCard {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* position: relative; */
+    cursor: pointer;
+    background-color: white;
+    border-radius: 6px;
+
+    /* overflow: hidden; */
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.imageCard>.carousel-img {
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.detail {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.detail>div {
+    padding: 25px 5px;
+    border-radius: 10px;
+}
+
+._amenities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.amenitites {
+    padding: 25px;
+}
+
+.amenitiesDetail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgb(217, 210, 210);
+}
+
+.amenitiesDetail>h3 {
+    font-size: 17px;
+}
+
+.amenitiesDetailData,
+.amenitiesDetail>p {
+    font-size: 15px;
+    color: #706d6d;
+}
+
+.amenities>.fa-heart {
+    color: red;
+    font-size: 25px;
+}
+
+.amenitiesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    row-gap: 15px;
+}
+
+.amenitiesListDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.amenitiesListDetail>h5 {
+    font-weight: 500;
+}
+
+.detailedRating>.stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detailedRating {
+    margin-top: 30px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.progressAndRating>.stars>img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.progressAndRating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.progress {
+    width: 400px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress>.filledProgressBar {
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(26, 36, 0) 8%, rgb(178, 231, 117) 100%);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.feedbackButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 20px;
+}
+
+.leaveReview {
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 5px 12px;
+    border: 0px transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.suggesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggesion>a {
+    background-color: rgb(141, 141, 230);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: transparent;
+    cursor: pointer;
+    color: black;
+}
+
+.suggesion>i {
+    font-size: 30px;
+}
+
+.detailButton {
+    padding: 20px;
+}
+
+.requestAccess {
+    background-color: rgb(50, 50, 245);
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: transparent;
+    color: white;
+    box-shadow: 1px 2px 13px 1px rgba(0, 0, 0, 0.75);
+}
+
+.mapView {
+    width: 35%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.mapView>iframe {
+    width: 100%;
+    height: 100%;
+    border: transparent;
+}
